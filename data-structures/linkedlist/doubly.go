@@ -51,9 +51,10 @@ func (s *DoublyLinkedList) PushBack(key Key) {
 	if s.tail == nil {
 		s.tail = node
 		s.head = s.tail
+		node.Prev = nil
 	} else {
 		s.tail.Next = node
-		s.tail.Prev = s.tail
+		node.Prev = s.tail
 		s.tail = node
 	}
 }
